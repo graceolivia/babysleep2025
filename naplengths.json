@@ -1,0 +1,25 @@
+{
+  "wake_windows": [
+    { "age_months": 0, "min_minutes": 30, "max_minutes": 60 },
+    { "age_months": 0.5, "min_minutes": 40, "max_minutes": 70 },
+    { "age_months": 1, "min_minutes": 50, "max_minutes": 80 },
+    { "age_months": 1.5, "min_minutes": 60, "max_minutes": 90 },
+    { "age_months": 2, "min_minutes": 75, "max_minutes": 100 },
+    { "age_months": 2.5, "min_minutes": 80, "max_minutes": 110 },
+    { "age_months": 3, "min_minutes": 90, "max_minutes": 120 },
+    { "age_months": 3.5, "min_minutes": 100, "max_minutes": 130 },
+    { "age_months": 4, "min_minutes": 110, "max_minutes": 150 },
+    { "age_months": 4.5, "min_minutes": 120, "max_minutes": 160 },
+    { "age_months": 5, "min_minutes": 130, "max_minutes": 180 },
+    { "age_months": 5.5, "min_minutes": 140, "max_minutes": 190 },
+    { "age_months": 6, "min_minutes": 150, "max_minutes": 210 },
+    { "age_months": 6.5, "min_minutes": 160, "max_minutes": 220 },
+    { "age_months": 7, "min_minutes": 170, "max_minutes": 240 },
+    { "age_months": 8, "min_minutes": 180, "max_minutes": 250 },
+    { "age_months": 9, "min_minutes": 190, "max_minutes": 270 },
+    { "age_months": 10, "min_minutes": 200, "max_minutes": 300 },
+    { "age_months": 11, "min_minutes": 210, "max_minutes": 330 },
+    { "age_months": 12, "min_minutes": 240, "max_minutes": 360 }
+  ]
+}
+

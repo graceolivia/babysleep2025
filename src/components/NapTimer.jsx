@@ -48,26 +48,30 @@ export default function NapTimer({ onNapAdded }) {
 
   return (
     <div className="text-center">
-      <button
-        onClick={toggleNap}
-        className={`px-8 py-4 text-lg font-bold text-white rounded-lg mb-6 ${
-          isNapping 
-            ? 'bg-green-500 hover:bg-green-600' 
-            : 'bg-blue-500 hover:bg-blue-600'
-        }`}
-      >
-        {isNapping ? 'Baby Awake' : 'Baby Asleep'}
-      </button>
+      {!isNapping ? (
+        <button
+          onClick={toggleNap}
+          className="px-8 py-4 text-lg font-bold text-white rounded-lg mb-6 bg-blue-500 hover:bg-blue-600"
+        >
+          Start Nap
+        </button>
+      ) : (
+        <div className="mb-6 flex items-center justify-center gap-4">
+          <div className="text-xl font-semibold text-gray-700">
+            {formatDuration(napDuration)}
+          </div>
+          <button
+            onClick={toggleNap}
+            className="px-8 py-4 text-lg font-bold text-white rounded-lg bg-green-500 hover:bg-green-600"
+          >
+            End Nap
+          </button>
+        </div>
+      )}
       
       <div className="flex justify-center">
         {isNapping ? <SleepingBabyAnimation /> : <AwakeBabyAnimation />}
       </div>
-      
-      {isNapping && (
-        <div className="mt-4 text-xl font-semibold text-gray-700">
-          {formatDuration(napDuration)}
-        </div>
-      )}
     </div>
   );
 }

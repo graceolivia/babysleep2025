@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awake Baby</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
+            font-family: Arial, sans-serif;
+        }
+
+        .baby-container {
+            position: relative;
+            transform: rotate(90deg);
+        }
+
+        /* Head */
+        .head {
+            width: 120px;
+            height: 120px;
+            background: #ffd6ba;
+            border-radius: 50%;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Open eyes */
+        .eye {
+            position: absolute;
+            top: 40px;
+            width: 25px;
+            height: 25px;
+            background: white;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .eye.left {
+            left: 30px;
+        }
+
+        .eye.right {
+            right: 30px;
+        }
+
+        /* Blue iris */
+        .iris {
+            position: absolute;
+            top: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 15px;
+            height: 15px;
+            background: #4a90e2;
+            border-radius: 50%;
+        }
+
+        /* Pupil */
+        .pupil {
+            position: absolute;
+            top: 3px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 8px;
+            height: 8px;
+            background: #2c3e50;
+            border-radius: 50%;
+        }
+
+        /* Eye shine */
+        .shine {
+            position: absolute;
+            top: 1px;
+            right: 2px;
+            width: 3px;
+            height: 3px;
+            background: white;
+            border-radius: 50%;
+        }
+
+        /* Eyelid for blinking */
+        .eyelid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #ffd6ba;
+            transform: translateY(-100%);
+            animation: blink 4s ease-in-out infinite;
+        }
+
+        @keyframes blink {
+            0%, 48%, 52%, 100% {
+                transform: translateY(-100%);
+            }
+            50% {
+                transform: translateY(0);
+            }
+        }
+
+        /* Hair curlicue */
+        .hair {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            border: 3px solid #8b6f5c;
+            border-radius: 50%;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+            transform: translateX(-50%) rotate(-45deg);
+        }
+
+        /* Smile */
+        .mouth {
+            position: absolute;
+            top: 75px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 25px;
+            height: 12px;
+            background: #ff9eaa;
+            border-radius: 0 0 25px 25px;
+        }
+
+        /* Rosy cheeks */
+        .cheek {
+            position: absolute;
+            top: 60px;
+            width: 20px;
+            height: 15px;
+            background: #ffb3c1;
+            border-radius: 50%;
+            opacity: 0.6;
+        }
+
+        .cheek.left {
+            left: 10px;
+        }
+
+        .cheek.right {
+            right: 10px;
+        }
+
+        /* Swaddle/blanket */
+        .swaddle {
+            width: 140px;
+            height: 180px;
+            background: #a8d5e2;
+            border-radius: 60px 60px 80px 80px;
+            position: absolute;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        /* Happy sparkles */
+        .sparkle {
+            position: absolute;
+            font-size: 20px;
+            animation: sparkle 2.5s ease-in-out infinite;
+        }
+
+        .sparkle:nth-child(1) {
+            top: -30px;
+            left: -40px;
+            animation-delay: 0s;
+        }
+
+        .sparkle:nth-child(2) {
+            top: -20px;
+            left: -50px;
+            animation-delay: 0.8s;
+        }
+
+        .sparkle:nth-child(3) {
+            top: 50px;
+            left: -45px;
+            animation-delay: 1.6s;
+        }
+
+        @keyframes sparkle {
+            0%, 100% {
+                opacity: 0;
+                transform: scale(0.5) rotate(0deg);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.2) rotate(180deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="baby-container">
+        <div class="swaddle"></div>
+        <div class="head">
+            <div class="hair"></div>
+            <div class="eye left">
+                <div class="iris">
+                    <div class="pupil">
+                        <div class="shine"></div>
+                    </div>
+                </div>
+                <div class="eyelid"></div>
+            </div>
+            <div class="eye right">
+                <div class="iris">
+                    <div class="pupil">
+                        <div class="shine"></div>
+                    </div>
+                </div>
+                <div class="eyelid"></div>
+            </div>
+            <div class="cheek left"></div>
+            <div class="cheek right"></div>
+            <div class="mouth"></div>
+        </div>
+        <div class="sparkle">✨</div>
+        <div class="sparkle">✨</div>
+        <div class="sparkle">✨</div>
+    </div>
+</body>
+</html>

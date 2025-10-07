@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleeping Baby</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: Arial, sans-serif;
+        }
+
+        .baby-container {
+            position: relative;
+            transform: rotate(90deg);
+        }
+
+        /* Head */
+        .head {
+            width: 120px;
+            height: 120px;
+            background: #ffd6ba;
+            border-radius: 50%;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Closed eyes */
+        .eye {
+            position: absolute;
+            top: 45px;
+            width: 25px;
+            height: 12px;
+            border-bottom: 3px solid #c19a7a;
+            border-radius: 0 0 25px 25px;
+        }
+
+        .eye.left {
+            left: 25px;
+        }
+
+        .eye.right {
+            right: 25px;
+        }
+
+        /* Hair curlicue */
+        .hair {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            border: 3px solid #8b6f5c;
+            border-radius: 50%;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+            transform: translateX(-50%) rotate(-45deg);
+        }
+
+        /* Mouth */
+        .mouth {
+            position: absolute;
+            top: 70px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: #ff9eaa;
+            border-radius: 50%;
+            animation: breathe 2.5s ease-in-out infinite;
+        }
+
+        @keyframes breathe {
+            0%, 100% {
+                width: 20px;
+                height: 20px;
+            }
+            50% {
+                width: 28px;
+                height: 28px;
+            }
+        }
+
+        /* Rosy cheeks */
+        .cheek {
+            position: absolute;
+            top: 60px;
+            width: 20px;
+            height: 15px;
+            background: #ffb3c1;
+            border-radius: 50%;
+            opacity: 0.6;
+        }
+
+        .cheek.left {
+            left: 10px;
+        }
+
+        .cheek.right {
+            right: 10px;
+        }
+
+
+
+        /* Swaddle/blanket */
+        .swaddle {
+            width: 140px;
+            height: 180px;
+            background: #a8d5e2;
+            border-radius: 60px 60px 80px 80px;
+            position: absolute;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        /* Z's for sleeping */
+        .z {
+            position: absolute;
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: bold;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .z:nth-child(1) {
+            top: -40px;
+            right: -30px;
+            animation-delay: 0s;
+        }
+
+        .z:nth-child(2) {
+            top: -60px;
+            right: -50px;
+            font-size: 20px;
+            animation-delay: 1s;
+        }
+
+        .z:nth-child(3) {
+            top: -75px;
+            right: -65px;
+            font-size: 16px;
+            animation-delay: 2s;
+        }
+
+        @keyframes float {
+            0% {
+                opacity: 0;
+                transform: translateY(0);
+            }
+            50% {
+                opacity: 0.7;
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="baby-container">
+        <div class="swaddle"></div>
+        <div class="head">
+            <div class="hair"></div>
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+            <div class="cheek left"></div>
+            <div class="cheek right"></div>
+            <div class="mouth"></div>
+        </div>
+        <div class="z">Z</div>
+        <div class="z">Z</div>
+        <div class="z">Z</div>
+    </div>
+</body>
+</html>

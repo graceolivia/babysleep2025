@@ -1,0 +1,320 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Sleeping Baby Animation - Side-lying */
+.baby-container {
+  position: relative;
+  transform: rotate(90deg) scale(0.6);
+}
+
+.baby-head {
+  width: 120px;
+  height: 120px;
+  background: #ffd6ba;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+}
+
+.baby-eye {
+  position: absolute;
+  top: 45px;
+  width: 25px;
+  height: 12px;
+  border-bottom: 3px solid #c19a7a;
+  border-radius: 0 0 25px 25px;
+}
+
+.baby-eye.left {
+  left: 25px;
+}
+
+.baby-eye.right {
+  right: 25px;
+}
+
+.baby-hair {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  border: 3px solid #8b6f5c;
+  border-radius: 50%;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  transform: translateX(-50%) rotate(-45deg);
+}
+
+.baby-mouth {
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background: #ff9eaa;
+  border-radius: 50%;
+  animation: breathe 2.5s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0%, 100% {
+    width: 20px;
+    height: 20px;
+  }
+  50% {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+.baby-cheek {
+  position: absolute;
+  top: 60px;
+  width: 20px;
+  height: 15px;
+  background: #ffb3c1;
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+.baby-cheek.left {
+  left: 10px;
+}
+
+.baby-cheek.right {
+  right: 10px;
+}
+
+.baby-swaddle {
+  width: 140px;
+  height: 180px;
+  background: #a8d5e2;
+  border-radius: 60px 60px 80px 80px;
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.sleep-z {
+  position: absolute;
+  font-size: 24px;
+  color: #666;
+  font-weight: bold;
+  animation: float 3s ease-in-out infinite;
+  font-family: Arial, sans-serif;
+}
+
+.sleep-z:nth-child(1) {
+  top: -30px;
+  left: -40px;
+  animation-delay: 0s;
+}
+
+.sleep-z:nth-child(2) {
+  top: -20px;
+  left: -50px;
+  font-size: 20px;
+  animation-delay: 1s;
+}
+
+.sleep-z:nth-child(3) {
+  top: 50px;
+  left: -45px;
+  font-size: 16px;
+  animation-delay: 2s;
+}
+
+@keyframes float {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Awake Baby Animation - Side-lying */
+.awake-baby-container {
+  position: relative;
+  transform: rotate(90deg) scale(0.6);
+}
+
+.awake-baby-head {
+  width: 120px;
+  height: 120px;
+  background: #ffd6ba;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+}
+
+.awake-baby-eye {
+  position: absolute;
+  top: 40px;
+  width: 25px;
+  height: 25px;
+  background: white;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.awake-baby-eye.left {
+  left: 30px;
+}
+
+.awake-baby-eye.right {
+  right: 30px;
+}
+
+.awake-baby-iris {
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 15px;
+  height: 15px;
+  background: #4a90e2;
+  border-radius: 50%;
+}
+
+.awake-baby-pupil {
+  position: absolute;
+  top: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  background: #2c3e50;
+  border-radius: 50%;
+}
+
+.awake-baby-shine {
+  position: absolute;
+  top: 1px;
+  right: 2px;
+  width: 3px;
+  height: 3px;
+  background: white;
+  border-radius: 50%;
+}
+
+.awake-baby-eyelid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffd6ba;
+  transform: translateY(-100%);
+  animation: blink 4s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 48%, 52%, 100% {
+    transform: translateY(-100%);
+  }
+  50% {
+    transform: translateY(0);
+  }
+}
+
+.awake-baby-hair {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  border: 3px solid #8b6f5c;
+  border-radius: 50%;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  transform: translateX(-50%) rotate(-45deg);
+}
+
+.awake-baby-mouth {
+  position: absolute;
+  top: 75px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 25px;
+  height: 12px;
+  background: #ff9eaa;
+  border-radius: 0 0 25px 25px;
+}
+
+.awake-baby-cheek {
+  position: absolute;
+  top: 60px;
+  width: 20px;
+  height: 15px;
+  background: #ffb3c1;
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+.awake-baby-cheek.left {
+  left: 10px;
+}
+
+.awake-baby-cheek.right {
+  right: 10px;
+}
+
+.awake-baby-swaddle {
+  width: 140px;
+  height: 180px;
+  background: #a8d5e2;
+  border-radius: 60px 60px 80px 80px;
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.awake-sparkle {
+  position: absolute;
+  font-size: 20px;
+  animation: sparkle 2.5s ease-in-out infinite;
+}
+
+.awake-sparkle:nth-child(1) {
+  top: -30px;
+  left: -40px;
+  animation-delay: 0s;
+}
+
+.awake-sparkle:nth-child(2) {
+  top: -20px;
+  left: -50px;
+  animation-delay: 0.8s;
+}
+
+.awake-sparkle:nth-child(3) {
+  top: 50px;
+  left: -45px;
+  animation-delay: 1.6s;
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0.5) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2) rotate(180deg);
+  }
+}

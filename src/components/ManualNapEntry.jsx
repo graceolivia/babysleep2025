@@ -4,15 +4,15 @@ import { addNap } from '../utils/storage';
 export default function ManualNapEntry({ onNapAdded }) {
   const [startTime, setStartTime] = useState('');
   const [endTime, setEndTime] = useState('');
+  const [napDate, setNapDate] = useState(new Date().toISOString().split('T')[0]);
   const [showForm, setShowForm] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!startTime || !endTime) return;
+    if (!startTime || !endTime || !napDate) return;
 
-    const today = new Date().toISOString().split('T')[0];
-    const start = new Date(`${today}T${startTime}`);
-    const end = new Date(`${today}T${endTime}`);
+    const start = new Date(`${napDate}T${startTime}`);
+    const end = new Date(`${napDate}T${endTime}`);
     
     if (end <= start) {
       alert('End time must be after start time');
@@ -21,7 +21,7 @@ export default function ManualNapEntry({ onNapAdded }) {
 
     const nap = {
       id: Date.now(),
-      date: today,
+      date: napDate,
       startTime,
       endTime,
       duration: end - start
@@ -31,6 +31,7 @@ export default function ManualNapEntry({ onNapAdded }) {
     onNapAdded();
     setStartTime('');
     setEndTime('');
+    setNapDate(new Date().toISOString().split('T')[0]);
     setShowForm(false);
   };
 
@@ -47,6 +48,16 @@ export default function ManualNapEntry({ onNapAdded }) {
         <form onSubmit={handleSubmit} className="bg-gray-50 p-4 rounded-lg">
           <h3 className="text-lg font-semibold mb-3">Manual Nap Entry</h3>
           <div className="space-y-3">
+            <div>
+              <label className="block text-sm font-medium text-gray-700">Date</label>
+              <input
+                type="date"
+                value={napDate}
+                onChange={(e) => setNapDate(e.target.value)}
+                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                required
+              />
+            </div>
             <div>
               <label className="block text-sm font-medium text-gray-700">Start Time</label>
               <input

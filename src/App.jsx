@@ -4,6 +4,7 @@ import ManualNapEntry from './components/ManualNapEntry';
 import NapTimeline from './components/NapTimeline';
 import NextNapPrediction from './components/NextNapPrediction';
 import CurrentTime from './components/CurrentTime';
+import NapHistory from './components/NapHistory';
 import { getNapsForDate } from './utils/storage';
 
 function App() {
@@ -68,8 +69,11 @@ function App() {
           <ManualNapEntry onNapAdded={loadTodaysNaps} />
         </div>
 
-        {/* Timeline */}
+        {/* Today's Timeline */}
         <NapTimeline naps={todaysNaps} onNapDeleted={loadTodaysNaps} />
+        
+        {/* Nap History */}
+        <NapHistory onNapDeleted={loadTodaysNaps} />
       </div>
     </div>
   );

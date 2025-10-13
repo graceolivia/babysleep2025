@@ -28,3 +28,28 @@ export const deleteNap = (napId) => {
   saveNaps(updatedNaps);
   return updatedNaps;
 };
+
+export const getAllNapsByDate = () => {
+  const naps = loadNaps();
+  const napsByDate = {};
+  
+  naps.forEach(nap => {
+    if (!napsByDate[nap.date]) {
+      napsByDate[nap.date] = [];
+    }
+    napsByDate[nap.date].push(nap);
+  });
+  
+  // Sort naps within each day by start time
+  Object.keys(napsByDate).forEach(date => {
+    napsByDate[date].sort((a, b) => a.startTime.localeCompare(b.startTime));
+  });
+  
+  return napsByDate;
+};
+
+export const getUniqueDates = () => {
+  const naps = loadNaps();
+  const dates = [...new Set(naps.map(nap => nap.date))];
+  return dates.sort().reverse(); // Most recent first
+};
